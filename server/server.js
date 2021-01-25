@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 const port = 3000;
 
-app.use(require("./routes/usuario"));
+app.use(require("./routes/index"));
 
 mongoose.connect(
   process.env.URLDB,
