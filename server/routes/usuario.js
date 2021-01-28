@@ -28,6 +28,12 @@ app.get("/usuario", verificarToken, (req, res) => {
       }
 
       Usuario.countDocuments({ estado: true }, (err, conteo) => {
+        if (err) {
+          return res.status(400).json({
+            ok: false,
+            err,
+          });
+        }
         res.json({
           ok: true,
           conteo,
